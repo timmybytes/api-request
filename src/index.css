@@ -20,4 +20,8 @@ code {
   height: 100%;
   margin: 0 auto;
   padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

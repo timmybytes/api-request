@@ -25,9 +25,18 @@ const getTodos = (resource, callback) => {
 
 getTodos('https://jsonplaceholder.typicode.com/todos')
   .then(data => {
-    console.log('promise resolved', data);
+    console.log('promise 1 resolved', data);
+    return getTodos('https://jsonplaceholder.typicode.com/users');
+  })
+  .then(data => {
+    console.log('promise 2 resolved', data);
+    return getTodos('https://jsonplaceholder.typicode.com/posts');
+  })
+  .then(data => {
+    console.log('promise 3 resolved', data);
   })
   .catch(err => {
+    // catches error(s) from any previous requests
     console.log('promise rejected', err);
   });
 
