@@ -16,10 +16,10 @@ code {
     monospace;
 }
 
-.App {
+.app {
   height: 100%;
   margin: 0 auto;
-  padding: 30px;
+  padding: minmax(10px, 30px);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -28,7 +28,9 @@ code {
 
 .posts {
   display: grid;
-  grid-template-columns: auto auto;
+  width: min(100%, 75rem);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  justify-items: center;
 }
 
 .posts__post {
@@ -42,25 +44,15 @@ code {
   border-radius: 6px;
 }
 
+.posts__post img {
+  width: 100%;
+  height: auto;
+}
+
 .posts__post h2 {
   padding: 0.5rem 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 2; /* number of lines to show */
-  -webkit-box-orient: vertical;
-  height: 75px;
 }
 
 .posts__post p {
   max-width: 60ch;
-}
-
-@media screen and (max-width: 700px) {
-  .posts {
-    grid-template-columns: 1fr;
-  }
-  .App {
-    padding: 10px;
-  }
 }
