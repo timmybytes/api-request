@@ -17,15 +17,18 @@ const Posts = () => {
     getData('https://jsonplaceholder.typicode.com/posts')
       .then(data => setPosts(data))
       .catch(err => console.log(err));
-  }, [posts]);
+  }, []);
 
   return (
-    <div className='posts'>
-      {posts &&
-        posts.map(post => {
-          return <SinglePost post={post} key={post.id} />;
-        })}
-    </div>
+    <>
+      <h2>Posts</h2>
+      <div className='posts'>
+        {posts &&
+          posts.slice(0, 5).map(post => {
+            return <SinglePost post={post} key={post.id} />;
+          })}
+      </div>
+    </>
   );
 };
 
