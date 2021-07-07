@@ -1,21 +1,16 @@
 import React from 'react';
-import { useEffect, useState } from 'react';
 
 const SelectOutput = ({ onChange }) => {
-  const handleClick = e => {
-    const selection = e.target.value;
-    onChange(selection);
-  };
   return (
     <nav className='select'>
       <ul>
         <li>
-          <button onClick={e => handleClick(e)} value='posts'>
+          <button onClick={e => onChange(e.target.value)} value='posts'>
             Posts
           </button>
         </li>
         <li>
-          <button onClick={e => handleClick(e)} value='users'>
+          <button onClick={e => onChange(e.target.value)} value='users'>
             Users
           </button>
         </li>
